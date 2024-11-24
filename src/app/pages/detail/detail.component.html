@@ -1,0 +1,31 @@
+<div class="container">
+  <button class="back-button" (click)="goBack()">← Back</button>
+
+  <div class="chart-container">
+    <h1>{{ countryName }}</h1>
+
+    <div class="stats-container">
+      <app-stat label="Number of entries" [value]="numberOfEntries"></app-stat>
+      <app-stat label="Total number medals" [value]="totalMedals"></app-stat>
+      <app-stat
+        label="Total number of athletes"
+        [value]="totalAthletes"
+      ></app-stat>
+    </div>
+
+    <ngx-charts-line-chart
+      [view]="view"
+      [results]="chartData"
+      [gradient]="false"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [legend]="legend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [animations]="animations"
+    >
+    </ngx-charts-line-chart>
+  </div>
+</div>
