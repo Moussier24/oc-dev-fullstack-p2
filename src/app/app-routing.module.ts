@@ -9,7 +9,12 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: '**', // wildcard
+    path: 'detail/:id',
+    loadComponent: () =>
+      import('./pages/detail/detail.component').then((m) => m.DetailComponent),
+  },
+  {
+    path: '**',
     component: NotFoundComponent,
   },
 ];
